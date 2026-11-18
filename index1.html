@@ -1,0 +1,1142 @@
+# DEIVEN SULEBE
+Web Profil Gereja GMI Ternate
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gereja Methodist Indonesia (GMI) Jemaat Ternate</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display (Serif Elegan) & Plus Jakarta Sans (Sans-Serif Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk Ikon Gerejawi & UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#1B365D',
+                            900: '#0F223D',
+                            950: '#091526',
+                        },
+                        maroon: {
+                            700: '#7A2021',
+                            800: '#5C1617',
+                        },
+                        gold: {
+                            400: '#E2B857',
+                            500: '#C59B27',
+                            600: '#A67F1B',
+                        },
+                        cream: '#FAF8F5',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-700 bg-cream antialiased selection:bg-gold-500 selection:text-white overflow-x-hidden">
+
+    <!-- ========================================== -->
+    <!-- 1. HEADER & NAVIGASI                       -->
+    <!-- ========================================== -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo GMI Ternate -->
+                <a href="#beranda" class="flex items-center space-x-3 group">
+                    <!-- Lambang Salib & Lidah Api Methodist SVG -->
+                    <div class="w-11 h-11 rounded-xl bg-navy-900 flex items-center justify-center shadow-md group-hover:bg-maroon-800 transition-colors duration-300 shrink-0">
+                        <svg class="w-7 h-7 text-gold-400" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Salib -->
+                            <path d="M27 8H33V23H46V29H33V56H27V29H14V23H27V8Z" fill="currentColor"/>
+                            <!-- Lidah Api Methodist -->
+                            <path d="M42 36C45.5 32 51 35 50 42C49.2 47.5 43.5 52 38 54C40.5 49.5 41 45 39 41.5C37.5 38.8 39.5 38.8 42 36Z" fill="#E04F3E"/>
+                            <path d="M47 41C49 39 52.5 41 51.5 45.5C50.7 49.2 46.5 52.2 42.5 53.5C44.5 50.5 45 47.2 43.8 44.8C43 43.2 45 43 47 41Z" fill="#F59E0B"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block font-serif font-bold text-lg sm:text-xl text-navy-900 leading-tight">GMI Ternate</span>
+                        <span class="block text-[11px] sm:text-xs font-medium text-maroon-700 tracking-wider uppercase">Gereja Methodist Indonesia</span>
+                    </div>
+                </a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-slate-700">
+                    <a href="#beranda" class="hover:text-gold-600 transition-colors py-2">Beranda</a>
+                    <a href="#tentang" class="hover:text-gold-600 transition-colors py-2">Tentang Kami</a>
+                    <a href="#jadwal" class="hover:text-gold-600 transition-colors py-2">Jadwal Ibadah</a>
+                    <a href="#pelayanan" class="hover:text-gold-600 transition-colors py-2">Pelayanan & Komisi</a>
+                    <a href="#warta" class="hover:text-gold-600 transition-colors py-2">Renungan & Berita</a>
+                    <a href="#kontak" class="hover:text-gold-600 transition-colors py-2">Kontak</a>
+                </nav>
+
+                <!-- Tombol Aksi Cepat & Hamburger Mobile -->
+                <div class="flex items-center space-x-3">
+                    <a href="#jadwal" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-full bg-navy-900 hover:bg-maroon-800 text-white text-sm font-semibold shadow-sm hover:shadow transition-all duration-300">
+                        <i class="far fa-calendar-alt mr-2 text-gold-400"></i>
+                        Jadwal Ibadah
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" aria-label="Buka Menu" class="lg:hidden p-2.5 rounded-xl text-navy-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500">
+                        <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 shadow-xl px-4 pt-3 pb-6 space-y-2">
+            <a href="#beranda" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-cream hover:text-navy-900">Beranda</a>
+            <a href="#tentang" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-cream hover:text-navy-900">Tentang Kami</a>
+            <a href="#jadwal" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-cream hover:text-navy-900">Jadwal Ibadah</a>
+            <a href="#pelayanan" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-cream hover:text-navy-900">Pelayanan & Komisi</a>
+            <a href="#warta" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-cream hover:text-navy-900">Renungan & Berita</a>
+            <a href="#kontak" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-cream hover:text-navy-900">Kontak</a>
+            <div class="pt-2 px-2">
+                <a href="#jadwal" class="mobile-link flex justify-center items-center w-full py-3 rounded-xl bg-navy-900 text-white font-semibold shadow">
+                    <i class="far fa-clock mr-2 text-gold-400"></i> Lihat Jadwal Ibadah
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- 2. HERO SECTION                            -->
+    <!-- ========================================== -->
+    <section id="beranda" class="relative min-h-[92vh] flex items-center pt-20 overflow-hidden">
+        <!-- Background Image dengan Fallback -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=1920&q=80" 
+                 onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/0F223D/FAF8F5?text=Gereja+Methodist+Indonesia+Ternate';"
+                 alt="Suasana Ibadah Hangat GMI Ternate" 
+                 class="w-full h-full object-cover object-center scale-105 transition-transform duration-1000">
+            <!-- Overlay Elegan Gradasi Navy & Marun Hangat -->
+            <div class="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-900/80 to-maroon-800/75"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="max-w-3xl">
+                <!-- Badge Sambutan -->
+                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-gold-400/30 text-gold-400 text-xs sm:text-sm font-medium mb-6">
+                    <i class="fas fa-dove"></i>
+                    <span>Syalom & Selamat Datang di Rumah Tuhan • Kota Ternate</span>
+                </div>
+
+                <!-- Judul Utama -->
+                <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                    Selamat Datang di <span class="text-gold-400">Gereja Methodist Indonesia</span> (GMI) Ternate
+                </h1>
+
+                <!-- Sub-judul bertema Kasih, Persekutuan & Pertumbuhan Iman -->
+                <p class="text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed mb-8 font-light">
+                    Menjadi keluarga Allah yang bertumbuh dalam kasih Kristus, bersekutu dengan penuh sukacita, dan menjadi berkat bagi sesama di Kota Ternate dan Kepulauan Maluku Utara.
+                </p>
+
+                <!-- Tombol CTA -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#jadwal" class="inline-flex justify-center items-center px-7 py-4 rounded-xl bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold text-base shadow-lg hover:shadow-xl transition-all duration-300">
+                        <i class="fas fa-church mr-2.5"></i>
+                        Jadwal Ibadah Minggu
+                    </a>
+                    <a href="#kontak" class="inline-flex justify-center items-center px-7 py-4 rounded-xl bg-white/15 hover:bg-white/25 backdrop-blur-md text-white border border-white/30 font-semibold text-base transition-all duration-300">
+                        <i class="fab fa-whatsapp mr-2.5 text-lg text-emerald-400"></i>
+                        Hubungi Kami
+                    </a>
+                </div>
+
+                <!-- Highlight Info Cepat -->
+                <div class="mt-12 pt-8 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-6 text-white">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-10 h-10 rounded-lg bg-gold-500/20 flex items-center justify-center text-gold-400 shrink-0">
+                            <i class="far fa-clock text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-300 uppercase tracking-wider">Ibadah Raya Minggu</p>
+                            <p class="font-semibold text-sm sm:text-base">09.00 & 17.00 WIT</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-10 h-10 rounded-lg bg-gold-500/20 flex items-center justify-center text-gold-400 shrink-0">
+                            <i class="fas fa-map-marker-alt text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-300 uppercase tracking-wider">Lokasi Gereja</p>
+                            <p class="font-semibold text-sm sm:text-base">Ternate Tengah, Maluku Utara</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-10 h-10 rounded-lg bg-gold-500/20 flex items-center justify-center text-gold-400 shrink-0">
+                            <i class="fas fa-book-bible text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-300 uppercase tracking-wider">Motto Pelayanan</p>
+                            <p class="font-semibold text-sm sm:text-base">Bertumbuh, Berakar & Berbuah</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. TENTANG KAMI & VISI MISI                -->
+    <!-- ========================================== -->
+    <section id="tentang" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header Bagian -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-maroon-700 font-semibold text-sm uppercase tracking-widest">Mengenal Lebih Dekat</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2 mb-4">Sejarah, Visi & Pelayanan GMI Ternate</h2>
+                <div class="w-20 h-1 bg-gold-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Sejarah Singkat & Foto Gereja -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
+                <div class="lg:col-span-6 relative">
+                    <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+                        <img src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092?auto=format&fit=crop&w=1000&q=80" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/800x600/1B365D/FAF8F5?text=Gedung+Gereja+GMI+Ternate';"
+                             alt="Gedung dan Persekutuan GMI Ternate" 
+                             class="w-full h-[360px] sm:h-[420px] object-cover">
+                    </div>
+                    <!-- Kartu Kutipan Iman -->
+                    <div class="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:-right-6 bg-navy-900 text-white p-6 rounded-2xl shadow-xl max-w-sm border-l-4 border-gold-500">
+                        <p class="font-serif italic text-sm sm:text-base text-slate-100 mb-2">
+                            "Sebab di mana dua atau tiga orang berkumpul dalam Nama-Ku, di situ Aku ada di tengah-tengah mereka."
+                        </p>
+                        <p class="text-xs font-semibold text-gold-400 tracking-wider uppercase">— Matius 18:20</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 space-y-5 lg:pl-4">
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900">Jejak Kasih di Bumi Kie Raha</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Pelayanan <strong>Gereja Methodist Indonesia (GMI) di Kota Ternate, Maluku Utara</strong> bermula dari kerinduan sekelompok perantau dan warga setempat untuk menghadirkan persekutuan yang berakar pada ajaran Alkitab, tradisi kekudusan sosial John Wesley, serta semangat penginjilan yang hangat dan terbuka bagi semua kalangan.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Dari persekutuan doa rumah tangga yang sederhana, Tuhan terus memelihara dan menumbuhkan jemaat hingga berdirinya GMI Jemaat Ternate. Hingga kini, kami terus berkomitmen melayani lintas generasi—mulai dari anak-anak sekolah minggu, pelajar dan mahasiswa perantau di Ternate, hingga keluarga-keluarga kristiani di Maluku Utara.
+                    </p>
+
+                    <!-- Visi & Misi Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3">
+                        <div class="p-5 rounded-2xl bg-cream border border-gold-500/25">
+                            <div class="w-10 h-10 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center mb-3">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h4 class="font-serif font-bold text-lg text-navy-900 mb-2">Visi Gereja</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Menjadi jemaat yang dewasa dalam iman, kudus dalam hidup, hangat dalam persekutuan, dan berdampak nyata bagi Kota Ternate dan bangsa.
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-cream border border-maroon-700/20">
+                            <div class="w-10 h-10 rounded-xl bg-maroon-800 text-gold-400 flex items-center justify-center mb-3">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h4 class="font-serif font-bold text-lg text-navy-900 mb-2">Misi Gereja</h4>
+                            <ul class="text-sm text-slate-600 space-y-1.5">
+                                <li class="flex items-start"><i class="fas fa-check text-gold-600 mt-1 mr-2 text-xs"></i> Ibadah yang memuliakan Tuhan</li>
+                                <li class="flex items-start"><i class="fas fa-check text-gold-600 mt-1 mr-2 text-xs"></i> Pemuridan jemaat lintas usia</li>
+                                <li class="flex items-start"><i class="fas fa-check text-gold-600 mt-1 mr-2 text-xs"></i> Pelayanan diakonia & kasih sosial</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profil Gembala Sidang & Majelis Jemaat -->
+            <div class="bg-cream rounded-3xl p-8 sm:p-12 border border-slate-200/80">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900">Gembala Sidang & Pimpinan Jemaat</h3>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2">Pelayan Tuhan yang dipercayakan menggembalakan dan mendampingi pertumbuhan rohani jemaat GMI Ternate.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Gembala Sidang -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center hover:shadow-md transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/300x300/1B365D/FFFFFF?text=Pdt.+GMI';"
+                             alt="Gembala Sidang GMI Ternate" 
+                             class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-gold-400/50 shadow">
+                        <span class="inline-block px-3 py-1 rounded-full bg-navy-900/10 text-navy-900 text-xs font-semibold mb-2">Gembala Sidang</span>
+                        <h4 class="font-serif font-bold text-lg text-navy-900">Pdt. Samuel Siahaan, M.Th.</h4>
+                        <p class="text-xs text-slate-500 mt-1 mb-3">Pelayanan Pastoral & Pengajaran</p>
+                        <p class="text-sm text-slate-600">Melayani penggembalaan jemaat, konseling keluarga, dan pembinaan rohani di GMI Ternate.</p>
+                    </div>
+
+                    <!-- Ketua Majelis Jemaat -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center hover:shadow-md transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/300x300/7A2021/FFFFFF?text=Majelis';"
+                             alt="Ketua Majelis Jemaat" 
+                             class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-gold-400/50 shadow">
+                        <span class="inline-block px-3 py-1 rounded-full bg-maroon-700/10 text-maroon-800 text-xs font-semibold mb-2">Ketua Majelis Jemaat</span>
+                        <h4 class="font-serif font-bold text-lg text-navy-900">Ls. Jonathan Latupeirissa</h4>
+                        <p class="text-xs text-slate-500 mt-1 mb-3">Koordinator Majelis & Administrasi</p>
+                        <p class="text-sm text-slate-600">Mendampingi Gembala Sidang dalam tata kelola pelayanan, program kerja, dan pengembangan jemaat.</p>
+                    </div>
+
+                    <!-- Koordinator Diakonia & Komisi -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center hover:shadow-md transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/300x300/1B365D/FFFFFF?text=Pelayan';"
+                             alt="Sekretaris & Koordinator Komisi" 
+                             class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-gold-400/50 shadow">
+                        <span class="inline-block px-3 py-1 rounded-full bg-gold-500/15 text-gold-600 text-xs font-semibold mb-2">Sekretaris Jemaat</span>
+                        <h4 class="font-serif font-bold text-lg text-navy-900">Ibu Ester Hutagalung, S.E.</h4>
+                        <p class="text-xs text-slate-500 mt-1 mb-3">Sekretariat & Koordinasi Komisi</p>
+                        <p class="text-sm text-slate-600">Mengelola warta jemaat, jadwal pelayanan seksi, serta menyambut tamu dan jemaat baru.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 4. JADWAL IBADAH & KEGIATAN (INTERAKTIF)   -->
+    <!-- ========================================== -->
+    <section id="jadwal" class="py-20 lg:py-28 bg-navy-900 text-white relative overflow-hidden">
+        <!-- Dekorasi Latar Halus -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-maroon-700/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-gold-400 font-semibold text-sm uppercase tracking-widest">Mari Bersekutu Bersama</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">Jadwal Ibadah & Kegiatan Sepekan</h2>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    Seluruh waktu ibadah menggunakan zona waktu <strong>Waktu Indonesia Timur (WIT)</strong>. Kami dengan sukacita menantikan kehadiran Bapak/Ibu/Saudara/i.
+                </p>
+            </div>
+
+            <!-- Tombol Filter Kategori Interaktif -->
+            <div class="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-12" id="schedule-filters">
+                <button data-filter="all" class="filter-btn active px-5 py-2.5 rounded-full text-sm font-semibold bg-gold-500 text-navy-950 shadow-md transition-all">
+                    Semua Jadwal
+                </button>
+                <button data-filter="umum" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white/10 text-white hover:bg-white/20 transition-all">
+                    Ibadah Umum
+                </button>
+                <button data-filter="pemuda" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white/10 text-white hover:bg-white/20 transition-all">
+                    Pemuda & Remaja (P3MI)
+                </button>
+                <button data-filter="anak" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white/10 text-white hover:bg-white/20 transition-all">
+                    Sekolah Minggu
+                </button>
+                <button data-filter="wilayah" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white/10 text-white hover:bg-white/20 transition-all">
+                    Persekutuan & Komisi
+                </button>
+            </div>
+
+            <!-- Grid Kartu Jadwal Ibadah -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="schedule-grid">
+                <!-- Kartu 1: Kebaktian Umum Minggu Pagi -->
+                <div class="schedule-card bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 hover:border-gold-400/60 transition-all duration-300 flex flex-col justify-between" data-category="umum">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-gold-500/20 text-gold-400 text-xs font-semibold">Ibadah Umum</span>
+                            <span class="text-xs text-slate-300 font-medium"><i class="far fa-calendar mr-1"></i> Setiap Minggu</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Kebaktian Umum Minggu I</h3>
+                        <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+                            Ibadah raya jemaat dengan liturgi Methodist yang khidmat, pujian paduan suara, dan pemberitaan Firman Tuhan.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 space-y-2 text-sm">
+                        <div class="flex items-center text-gold-400 font-semibold">
+                            <i class="far fa-clock w-5"></i>
+                            <span>Pukul 09.00 – 11.00 WIT</span>
+                        </div>
+                        <div class="flex items-center text-slate-300">
+                            <i class="fas fa-map-marker-alt w-5 text-gold-400/80"></i>
+                            <span>Ruang Ibadah Utama GMI Ternate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartu 2: Kebaktian Umum Minggu Sore -->
+                <div class="schedule-card bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 hover:border-gold-400/60 transition-all duration-300 flex flex-col justify-between" data-category="umum">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-gold-500/20 text-gold-400 text-xs font-semibold">Ibadah Umum</span>
+                            <span class="text-xs text-slate-300 font-medium"><i class="far fa-calendar mr-1"></i> Setiap Minggu</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Kebaktian Umum Minggu II (Sore)</h3>
+                        <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+                            Ibadah sore dengan nuansa hangat dan kontemporer, terbuka bagi jemaat, mahasiswa, serta pekerja di Kota Ternate.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 space-y-2 text-sm">
+                        <div class="flex items-center text-gold-400 font-semibold">
+                            <i class="far fa-clock w-5"></i>
+                            <span>Pukul 17.00 – 18.45 WIT</span>
+                        </div>
+                        <div class="flex items-center text-slate-300">
+                            <i class="fas fa-map-marker-alt w-5 text-gold-400/80"></i>
+                            <span>Ruang Ibadah Utama GMI Ternate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartu 3: Sekolah Minggu -->
+                <div class="schedule-card bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 hover:border-gold-400/60 transition-all duration-300 flex flex-col justify-between" data-category="anak">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold">Sekolah Minggu</span>
+                            <span class="text-xs text-slate-300 font-medium"><i class="far fa-calendar mr-1"></i> Setiap Minggu</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Ibadah Sekolah Minggu (SM)</h3>
+                        <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+                            Pembinaan iman anak (Kelas Balita, Pratama, dan Madya) melalui cerita Alkitab kreatif, pujian, dan aktivitas edukatif.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 space-y-2 text-sm">
+                        <div class="flex items-center text-gold-400 font-semibold">
+                            <i class="far fa-clock w-5"></i>
+                            <span>Pukul 09.00 – 10.30 WIT</span>
+                        </div>
+                        <div class="flex items-center text-slate-300">
+                            <i class="fas fa-map-marker-alt w-5 text-gold-400/80"></i>
+                            <span>Ruang Kelas Sekolah Minggu Lt. 2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartu 4: P3MI (Pemuda & Remaja) -->
+                <div class="schedule-card bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 hover:border-gold-400/60 transition-all duration-300 flex flex-col justify-between" data-category="pemuda">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-semibold">Pemuda & Remaja</span>
+                            <span class="text-xs text-slate-300 font-medium"><i class="far fa-calendar mr-1"></i> Setiap Sabtu</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Persekutuan Pemuda & Remaja (P3MI)</h3>
+                        <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+                            Wadah persekutuan pelajar, mahasiswa, dan pemuda Kristen Ternate untuk bertumbuh dalam karakter Kristus dan persahabatan.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 space-y-2 text-sm">
+                        <div class="flex items-center text-gold-400 font-semibold">
+                            <i class="far fa-clock w-5"></i>
+                            <span>Pukul 18.30 – 20.30 WIT</span>
+                        </div>
+                        <div class="flex items-center text-slate-300">
+                            <i class="fas fa-map-marker-alt w-5 text-gold-400/80"></i>
+                            <span>Aula Serbaguna GMI Ternate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartu 5: PWMI & P2MI -->
+                <div class="schedule-card bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 hover:border-gold-400/60 transition-all duration-300 flex flex-col justify-between" data-category="wilayah">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 text-xs font-semibold">Persekutuan Komisi</span>
+                            <span class="text-xs text-slate-300 font-medium"><i class="far fa-calendar mr-1"></i> Jumat (Minggu II & IV)</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Persekutuan Wanita (PWMI) & Pria (P2MI)</h3>
+                        <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+                            Persekutuan kaum ibu dan kaum bapak Methodist untuk saling menguatkan dalam peran keluarga, gereja, dan masyarakat.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 space-y-2 text-sm">
+                        <div class="flex items-center text-gold-400 font-semibold">
+                            <i class="far fa-clock w-5"></i>
+                            <span>Pukul 18.00 – 19.30 WIT</span>
+                        </div>
+                        <div class="flex items-center text-slate-300">
+                            <i class="fas fa-map-marker-alt w-5 text-gold-400/80"></i>
+                            <span>Aula Gereja / Rumah Anggota Bergilir</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartu 6: Doa Tengah Minggu -->
+                <div class="schedule-card bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 hover:border-gold-400/60 transition-all duration-300 flex flex-col justify-between" data-category="wilayah">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold">Doa & Wilayah</span>
+                            <span class="text-xs text-slate-300 font-medium"><i class="far fa-calendar mr-1"></i> Setiap Rabu</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Ibadah Doa Tengah Minggu & PA</h3>
+                        <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+                            Pendalaman Alkitab (PA) dan doa syafaat bersama untuk jemaat, Kota Ternate, Maluku Utara, dan bangsa Indonesia.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 space-y-2 text-sm">
+                        <div class="flex items-center text-gold-400 font-semibold">
+                            <i class="far fa-clock w-5"></i>
+                            <span>Pukul 19.00 – 20.30 WIT</span>
+                        </div>
+                        <div class="flex items-center text-slate-300">
+                            <i class="fas fa-map-marker-alt w-5 text-gold-400/80"></i>
+                            <span>Ruang Konsistori / Komsel Wilayah</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. PELAYANAN & KOMISI                      -->
+    <!-- ========================================== -->
+    <section id="pelayanan" class="py-20 lg:py-28 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-maroon-700 font-semibold text-sm uppercase tracking-widest">Melayani Dengan Kasih</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2 mb-4">Pelayanan & Komisi Jemaat</h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Setiap anggota jemaat dipanggil untuk mengambil bagian dalam pekerjaan Tuhan sesuai karunia yang dipercayakan-Nya.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Pelayanan 1: Diakonia -->
+                <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200/70 hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-maroon-800 text-gold-400 flex items-center justify-center text-2xl mb-6 shadow-sm">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Pelayanan Diakonia</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Kunjungan kasih kepada jemaat yang sakit, lansia, berduka, serta bantuan diakonia bagi keluarga yang membutuhkan dukungan.
+                    </p>
+                    <span class="text-xs font-semibold text-maroon-700 flex items-center">
+                        <i class="fas fa-circle text-[6px] mr-2"></i> Kunjungan Rutin Setiap Pekan
+                    </span>
+                </div>
+
+                <!-- Pelayanan 2: Paduan Suara & Musik -->
+                <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200/70 hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-navy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 shadow-sm">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Musik & Paduan Suara</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Melayani pujian dalam ibadah melalui Paduan Suara Jemaat, Pemandu Pujian (Worship Leader), Pemusik, dan Tim Multimedia.
+                    </p>
+                    <span class="text-xs font-semibold text-navy-800 flex items-center">
+                        <i class="fas fa-circle text-[6px] mr-2"></i> Latihan: Sabtu Pukul 16.00 WIT
+                    </span>
+                </div>
+
+                <!-- Pelayanan 3: Kelompok Sel (Komsel) -->
+                <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200/70 hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-500 text-navy-950 flex items-center justify-center text-2xl mb-6 shadow-sm">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Kelompok Sel (Komsel)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Persekutuan akrab berbasis wilayah di Ternate Utara, Ternate Tengah, dan Ternate Selatan untuk saling mendoakan dan berbagi firman.
+                    </p>
+                    <span class="text-xs font-semibold text-gold-600 flex items-center">
+                        <i class="fas fa-circle text-[6px] mr-2"></i> 4 Wilayah Pelayanan Ternate
+                    </span>
+                </div>
+
+                <!-- Pelayanan 4: Misi Sosial di Ternate -->
+                <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200/70 hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-navy-800 text-gold-400 flex items-center justify-center text-2xl mb-6 shadow-sm">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Misi Sosial & Pendidikan</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Aksi bakti sosial, donor darah, peduli bencana gunung api/alam di Maluku Utara, serta pembinaan karakter anak dan remaja.
+                    </p>
+                    <span class="text-xs font-semibold text-navy-800 flex items-center">
+                        <i class="fas fa-circle text-[6px] mr-2"></i> Berdampak Bagi Sesama
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 6. GALERI & WARTA JEMAAT (DENGAN MODAL)    -->
+    <!-- ========================================== -->
+    <section id="warta" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Bagian Warta Jemaat & Renungan -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-maroon-700 font-semibold text-sm uppercase tracking-widest">Informasi & Renungan</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2">Warta Jemaat & Renungan Minggu Ini</h2>
+                </div>
+                <p class="text-sm text-slate-500 mt-2 md:mt-0">Klik kartu untuk membaca pengumuman & renungan lengkap</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                <!-- Warta Card 1 -->
+                <article onclick="openWartaModal(0)" class="cursor-pointer group bg-cream rounded-2xl overflow-hidden border border-slate-200/80 hover:border-gold-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/1B365D/FAF8F5?text=Renungan+Mingguan';"
+                                 alt="Renungan Firman Tuhan" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-navy-900 text-gold-400 text-xs font-semibold">Renungan Sepekan</span>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-xs text-slate-500 mb-2"><i class="far fa-calendar-alt mr-1.5"></i> Edisi Minggu Ini</p>
+                            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-maroon-700 transition-colors mb-3">
+                                Menjadi Terang Kristus di Tengah Tantangan Zaman
+                            </h3>
+                            <p class="text-sm text-slate-600 line-clamp-3 leading-relaxed">
+                                Renungan dari Matius 5:14-16 tentang bagaimana setiap orang percaya dipanggil membawa damai sejahtera dan keteladanan hidup di lingkungan kerja maupun keluarga di Ternate...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <span class="inline-flex items-center text-sm font-semibold text-navy-900 group-hover:text-gold-600">
+                            Baca Selengkapnya <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                    </div>
+                </article>
+
+                <!-- Warta Card 2 -->
+                <article onclick="openWartaModal(1)" class="cursor-pointer group bg-cream rounded-2xl overflow-hidden border border-slate-200/80 hover:border-gold-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/7A2021/FAF8F5?text=Warta+Jemaat';"
+                                 alt="Perjamuan Kudus dan Katekisasi" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-maroon-800 text-white text-xs font-semibold">Warta Jemaat</span>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-xs text-slate-500 mb-2"><i class="far fa-calendar-alt mr-1.5"></i> Pengumuman Pelayanan</p>
+                            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-maroon-700 transition-colors mb-3">
+                                Sakramen Perjamuan Kudus & Pendaftaran Kelas Katekisasi
+                            </h3>
+                            <p class="text-sm text-slate-600 line-clamp-3 leading-relaxed">
+                                Diberitahukan kepada seluruh jemaat bahwa Sakramen Perjamuan Kudus akan dilaksanakan pada Minggu pertama bulan depan. Pendaftaran katekisasi sidi baru telah dibuka...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <span class="inline-flex items-center text-sm font-semibold text-navy-900 group-hover:text-gold-600">
+                            Baca Detail Warta <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                    </div>
+                </article>
+
+                <!-- Warta Card 3 -->
+                <article onclick="openWartaModal(2)" class="cursor-pointer group bg-cream rounded-2xl overflow-hidden border border-slate-200/80 hover:border-gold-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/0F223D/FAF8F5?text=Bakti+Sosial+GMI';"
+                                 alt="Bakti Sosial Kasih Diakonia" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-gold-500 text-navy-950 text-xs font-semibold">Kegiatan Sosial</span>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-xs text-slate-500 mb-2"><i class="far fa-calendar-alt mr-1.5"></i> Agenda Komisi Diakonia</p>
+                            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-maroon-700 transition-colors mb-3">
+                                Aksi Diakonia Kasih & Pemeriksaan Kesehatan Gratis
+                            </h3>
+                            <p class="text-sm text-slate-600 line-clamp-3 leading-relaxed">
+                                Komisi Diakonia bersama P3MI dan PWMI akan mengadakan bakti sosial pembagian paket sembako dan layanan pemeriksaan kesehatan dasar bagi warga sekitar...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <span class="inline-flex items-center text-sm font-semibold text-navy-900 group-hover:text-gold-600">
+                            Baca Detail Kegiatan <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Galeri Kegiatan Jemaat -->
+            <div>
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900">Galeri Persekutuan & Pelayanan</h3>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2">Momen sukacita kebersamaan keluarga besar GMI Jemaat Ternate.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="group relative rounded-2xl overflow-hidden aspect-square shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1519491050282-cf00c82424b4?auto=format&fit=crop&w=600&q=80" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/500x500/1B365D/FFFFFF?text=Ibadah+Raya';"
+                             alt="Ibadah Raya Minggu" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <p class="text-white text-xs sm:text-sm font-medium">Ibadah Raya Minggu Jemaat</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative rounded-2xl overflow-hidden aspect-square shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/500x500/7A2021/FFFFFF?text=Pemuda+P3MI';"
+                             alt="Persekutuan Pemuda P3MI" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <p class="text-white text-xs sm:text-sm font-medium">Kebersamaan Pemuda & Remaja (P3MI)</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative rounded-2xl overflow-hidden aspect-square shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/500x500/C59B27/0F223D?text=Sekolah+Minggu';"
+                             alt="Sekolah Minggu GMI Ternate" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <p class="text-white text-xs sm:text-sm font-medium">Keceriaan Anak Sekolah Minggu</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative rounded-2xl overflow-hidden aspect-square shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=600&q=80" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/500x500/0F223D/FFFFFF?text=Diakonia+Kasih';"
+                             alt="Aksi Sosial Diakonia" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <p class="text-white text-xs sm:text-sm font-medium">Aksi Diakonia & Berbagi Kasih</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 7. PERMOHONAN DOA, PERSEMBAHAN & KONTAK    -->
+    <!-- ========================================== -->
+    <section id="kontak" class="py-20 lg:py-28 bg-cream border-t border-slate-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-maroon-700 font-semibold text-sm uppercase tracking-widest">Terhubung Bersama Kami</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2 mb-4">Permohonan Doa, Kontak & Lokasi</h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Apakah Anda membutuhkan dukungan doa, pelayanan pastoral, atau ingin berkunjung ke GMI Ternate? Silakan hubungi kami.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <!-- Kolom Kiri: Formulir Permohonan Doa & Pesan -->
+                <div class="lg:col-span-6 bg-white rounded-3xl p-7 sm:p-10 shadow-sm border border-slate-200/80">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-11 h-11 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-lg">
+                            <i class="fas fa-praying-hands"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-navy-900">Kirim Pokok Doa / Pertanyaan</h3>
+                            <p class="text-xs text-slate-500">Tim Pastoral & Doa Syafaat GMI Ternate siap mendoakan Anda</p>
+                        </div>
+                    </div>
+
+                    <form id="prayer-form" class="space-y-4">
+                        <div>
+                            <label for="nama" class="block text-sm font-semibold text-slate-700 mb-1.5">Nama Lengkap <span class="text-rose-600">*</span></label>
+                            <input type="text" id="nama" required placeholder="Masukkan nama Anda" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-navy-800 focus:ring-2 focus:ring-navy-800/20 outline-none transition text-sm">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="whatsapp" class="block text-sm font-semibold text-slate-700 mb-1.5">No. WhatsApp / Telepon</label>
+                                <input type="tel" id="whatsapp" placeholder="Contoh: 0812-44xx-xxxx" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-navy-800 focus:ring-2 focus:ring-navy-800/20 outline-none transition text-sm">
+                            </div>
+                            <div>
+                                <label for="kategori" class="block text-sm font-semibold text-slate-700 mb-1.5">Kategori Pesan</label>
+                                <select id="kategori" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-navy-800 focus:ring-2 focus:ring-navy-800/20 outline-none transition text-sm bg-white">
+                                    <option value="Permohonan Doa">Permohonan Doa Syafaat</option>
+                                    <option value="Konseling Pastoral">Konseling / Kunjungan Pastoral</option>
+                                    <option value="Jemaat Baru / Atestasi">Informasi Jemaat Baru / Atestasi</option>
+                                    <option value="Pertanyaan Umum">Pertanyaan Umum</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="pesan" class="block text-sm font-semibold text-slate-700 mb-1.5">Pokok Doa atau Pesan <span class="text-rose-600">*</span></label>
+                            <textarea id="pesan" rows="4" required placeholder="Tuliskan pokok doa, pergumulan, atau pertanyaan Anda di sini..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-navy-800 focus:ring-2 focus:ring-navy-800/20 outline-none transition text-sm"></textarea>
+                        </div>
+
+                        <div class="flex items-center">
+                            <input type="checkbox" id="rahasia" class="w-4 h-4 text-navy-900 rounded border-slate-300 focus:ring-navy-800">
+                            <label for="rahasia" class="ml-2 text-xs text-slate-600">Jaga kerahasiaan (hanya didoakan secara pribadi oleh Gembala Sidang)</label>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-navy-900 hover:bg-maroon-800 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2 text-gold-400"></i>
+                            Kirim Pokok Doa & Pesan
+                        </button>
+                    </form>
+
+                    <!-- Kotak Notifikasi Pengiriman Formulir (Pengganti alert) -->
+                    <div id="form-feedback" class="hidden mt-5 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-emerald-600 text-lg mt-0.5"></i>
+                        <div>
+                            <p class="font-bold">Terima Kasih, Tuhan Memberkati!</p>
+                            <p id="form-feedback-text" class="text-xs mt-1 leading-relaxed"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Info Alamat, Persembahan (Salin Rekening) & Peta -->
+                <div class="lg:col-span-6 space-y-6">
+                    <!-- Kartu Alamat & Kontak Sekretariat -->
+                    <div class="bg-white rounded-3xl p-7 shadow-sm border border-slate-200/80">
+                        <h3 class="font-serif text-xl font-bold text-navy-900 mb-4">Alamat & Sekretariat Gereja</h3>
+                        <div class="space-y-4 text-sm">
+                            <div class="flex items-start space-x-3.5">
+                                <div class="w-9 h-9 rounded-lg bg-cream text-maroon-700 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-navy-900">Gereja Methodist Indonesia (GMI) Jemaat Ternate</p>
+                                    <p class="text-slate-600 mt-0.5">Jl. Pahlawan Revolusi / Kawasan Pusat Kota, Kec. Ternate Tengah, Kota Ternate, Maluku Utara 97713</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3.5">
+                                <div class="w-9 h-9 rounded-lg bg-cream text-emerald-600 flex items-center justify-center shrink-0">
+                                    <i class="fab fa-whatsapp text-base"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-navy-900">WhatsApp & Telepon Sekretariat</p>
+                                    <p class="text-slate-600 mt-0.5">+62 812-4488-7790 (Sekretariat GMI Ternate)</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3.5">
+                                <div class="w-9 h-9 rounded-lg bg-cream text-navy-800 flex items-center justify-center shrink-0">
+                                    <i class="far fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-navy-900">Email Resmi</p>
+                                    <p class="text-slate-600 mt-0.5">sekretariat@gmiternate.or.id</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Informasi Persembahan / Transfer Bank -->
+                    <div class="bg-gradient-to-br from-navy-900 to-navy-950 text-white rounded-3xl p-7 shadow-md border border-gold-500/30">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-serif text-xl font-bold text-gold-400">Persembahan & Persepuluhan</h3>
+                            <i class="fas fa-heart text-gold-400/80"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-300 mb-5 leading-relaxed">
+                            "Hendaklah masing-masing memberikan menurut kerelaan hatinya, jangan dengan sedih hati atau karena paksaan, sebab Allah mengasihi orang yang memberi dengan sukacita." (2 Korintus 9:7)
+                        </p>
+
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div>
+                                <span class="text-xs text-gold-400 font-semibold uppercase tracking-wider">Bank BRI / Bank Mandiri</span>
+                                <p id="rekening-number" class="font-mono text-lg sm:text-xl font-bold tracking-wider text-white mt-0.5">0104-01-004829-53-8</p>
+                                <p class="text-xs text-slate-300 mt-0.5">a.n. <strong>Gereja Methodist Indonesia Jemaat Ternate</strong></p>
+                            </div>
+                            <button type="button" onclick="copyRekening()" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold text-xs shadow transition-all shrink-0">
+                                <i class="far fa-copy mr-1.5"></i>
+                                <span id="copy-btn-text">Salin Rekening</span>
+                            </button>
+                        </div>
+                        <p id="copy-feedback" class="hidden text-xs text-emerald-400 mt-2.5 font-medium">
+                            <i class="fas fa-check-circle mr-1"></i> Nomor rekening berhasil disalin ke papan klip!
+                        </p>
+                    </div>
+
+                    <!-- Peta Lokasi Ternate -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200/80">
+                        <div class="h-56 w-full relative bg-slate-200">
+                            <iframe 
+                                title="Peta Lokasi GMI Ternate"
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=127.3650%2C0.7820%2C127.3920%2C0.7990&amp;layer=mapnik&amp;marker=0.7905%2C127.3785" 
+                                class="w-full h-full border-0"
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="px-5 py-3 bg-white flex items-center justify-between text-xs">
+                            <span class="text-slate-600 font-medium"><i class="fas fa-compass text-maroon-700 mr-1.5"></i> Ternate Tengah, Kota Ternate</span>
+                            <a href="https://maps.google.com/?q=Ternate+Tengah,+Kota+Ternate,+Maluku+Utara" target="_blank" rel="noopener noreferrer" class="text-navy-900 font-bold hover:text-gold-600">
+                                Buka di Google Maps <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 8. FOOTER                                  -->
+    <!-- ========================================== -->
+    <footer class="bg-navy-950 text-slate-300 pt-16 pb-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+                <!-- Kolom 1: Identitas Gereja -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-maroon-800 flex items-center justify-center text-gold-400 font-serif font-bold text-xl">
+                            <i class="fas fa-cross"></i>
+                        </div>
+                        <div>
+                            <span class="block font-serif font-bold text-lg text-white">GMI Ternate</span>
+                            <span class="block text-xs text-gold-400">Gereja Methodist Indonesia</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Menghadirkan kasih Kristus, persekutuan yang hangat, dan pelayanan yang memuliakan Tuhan di Kota Ternate, Maluku Utara.
+                    </p>
+                </div>
+
+                <!-- Kolom 2: Tautan Cepat -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-base mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#beranda" class="hover:text-gold-400 transition-colors">Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-gold-400 transition-colors">Sejarah & Visi Misi</a></li>
+                        <li><a href="#jadwal" class="hover:text-gold-400 transition-colors">Jadwal Ibadah Sepekan</a></li>
+                        <li><a href="#pelayanan" class="hover:text-gold-400 transition-colors">Pelayanan & Komisi</a></li>
+                        <li><a href="#warta" class="hover:text-gold-400 transition-colors">Warta Jemaat & Galeri</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: Jam Operasional Kantor -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-base mb-4">Jam Kantor Sekretariat</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li class="flex justify-between">
+                            <span>Selasa – Jumat:</span>
+                            <span class="text-white font-medium">09.00 – 16.00 WIT</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sabtu:</span>
+                            <span class="text-white font-medium">09.00 – 14.00 WIT</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Minggu:</span>
+                            <span class="text-gold-400 font-medium">Pelayanan Ibadah</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Senin:</span>
+                            <span class="text-slate-500">Libur Kantor</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 4: Ibadah Utama -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-base mb-4">Ibadah Minggu</h4>
+                    <p class="text-sm text-slate-400 mb-3">
+                        Bergabunglah bersama kami setiap hari Minggu:
+                    </p>
+                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 text-xs space-y-1.5">
+                        <p class="text-gold-400 font-semibold">• Kebaktian Pagi: 09.00 WIT</p>
+                        <p class="text-gold-400 font-semibold">• Sekolah Minggu: 09.00 WIT</p>
+                        <p class="text-gold-400 font-semibold">• Kebaktian Sore: 17.00 WIT</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="current-year">2026</span> Gereja Methodist Indonesia (GMI) Jemaat Ternate. Hak Cipta Dilindungi.</p>
+                <p class="text-slate-400">Soli Deo Gloria • Kemuliaan Hanya Bagi Allah</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- MODAL DETAIL WARTA JEMAAT & RENUNGAN       -->
+    <!-- ========================================== -->
+    <div id="warta-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/75 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[88vh] overflow-y-auto shadow-2xl border border-slate-200 animate-fadeIn">
+            <div class="sticky top-0 bg-white px-6 py-4 border-b border-slate-100 flex justify-between items-center z-10">
+                <span id="modal-badge" class="px-3 py-1 rounded-full bg-navy-900 text-gold-400 text-xs font-semibold">Warta Jemaat</span>
+                <button onclick="closeWartaModal()" aria-label="Tutup Modal" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-rose-100 hover:text-rose-700 flex items-center justify-center text-slate-600 transition">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6 sm:p-8">
+                <p id="modal-date" class="text-xs text-slate-500 mb-2"></p>
+                <h3 id="modal-title" class="font-serif text-2xl sm:text-3xl font-bold text-navy-900 mb-5"></h3>
+                <div id="modal-content" class="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed"></div>
+            </div>
+            <div class="px-6 py-4 bg-cream border-t border-slate-100 flex justify-end">
+                <button onclick="closeWartaModal()" class="px-6 py-2.5 rounded-xl bg-navy-900 hover:bg-maroon-800 text-white text-sm font-semibold transition">
+                    Tutup Pengumuman
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- JAVASCRIPT INTERAKTIF                      -->
+    <!-- ========================================== -->
+    <script>
+        // 1. Set Tahun Otomatis di Footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 2. Toggle Navigasi Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            }
+        });
+
+        // Tutup menu mobile saat tautan diklik
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // 3. Filter Interaktif Jadwal Ibadah
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const scheduleCards = document.querySelectorAll('.schedule-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Reset style tombol aktif
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-gold-500', 'text-navy-950', 'shadow-md');
+                    b.classList.add('bg-white/10', 'text-white');
+                });
+                // Aktifkan tombol yang diklik
+                btn.classList.remove('bg-white/10', 'text-white');
+                btn.classList.add('bg-gold-500', 'text-navy-950', 'shadow-md');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                scheduleCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filterValue === 'all' || category === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 4. Data & Modal Detail Warta Jemaat / Renungan
+        const wartaData = [
+            {
+                badge: "Renungan Sepekan",
+                date: "Bacaan Alkitab: Matius 5:14-16",
+                title: "Menjadi Terang Kristus di Tengah Tantangan Zaman",
+                content: `
+                    <p><strong>"Kamu adalah terang dunia. Kota yang terletak di atas gunung tidak mungkin tersembunyi." (Matius 5:14)</strong></p>
+                    <p>Saudara-saudari yang dikasihi Tuhan Yesus Kristus, sebagai jemaat yang ditempatkan Tuhan di Kota Ternate—kota sejarah di kaki Gunung Gamalama—kita dipanggil bukan hanya untuk beribadah di dalam gedung gereja, melainkan membawa terang kasih Kristus ke tengah kehidupan sehari-hari.</p>
+                    <p>Tradisi Methodist yang diwariskan oleh John Wesley menekankan dua hal yang tak terpisahkan: <em>kesalehan pribadi</em> (hubungan intim dengan Tuhan melalui doa dan Firman) dan <em>kesalehan sosial</em> (kepedulian nyata, kejujuran, serta kasih kepada sesama tanpa memandang latar belakang).</p>
+                    <p>Mari kita terus memancarkan kelemahlembutan, integritas dalam pekerjaan maupun studi, serta semangat persaudaraan yang rukun di Bumi Kie Raha. Tuhan Yesus memberkati kita semua.</p>
+                `
+            },
+            {
+                badge: "Warta Jemaat",
+                date: "Informasi Pelayanan & Sakramen",
+                title: "Sakramen Perjamuan Kudus & Pendaftaran Kelas Katekisasi",
+                content: `
+                    <p>Majelis Jemaat Gereja Methodist Indonesia (GMI) Ternate memberitahukan kepada seluruh jemaat beberapa agenda pelayanan penting:</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Sakramen Perjamuan Kudus:</strong> Akan dilayankan pada Ibadah Raya Minggu I (09.00 WIT) dan Ibadah Minggu II (17.00 WIT) di awal bulan mendatang. Jemaat diundang mempersiapkan hati dalam doa dan perenungan.</li>
+                        <li><strong>Kelas Katekisasi Sidi & Baptisan Dewasa:</strong> Pendaftaran kelas katekisasi baru telah dibuka di Sekretariat Gereja atau melalui Majelis Wilayah masing-masing. Kelas akan dilaksanakan setiap hari Sabtu pukul 16.00 WIT.</li>
+                        <li><strong>Penerimaan Atestasi Jemaat:</strong> Bagi Bapak/Ibu/Mahasiswa yang baru pindah ke Kota Ternate dan rindu bersekutu di GMI Ternate, silakan menghubungi Majelis Penyambut setelah ibadah.</li>
+                    </ul>
+                `
+            },
+            {
+                badge: "Kegiatan Sosial & Diakonia",
+                date: "Pelayanan Kasih Komisi Diakonia, PWMI & P3MI",
+                title: "Aksi Diakonia Kasih & Pemeriksaan Kesehatan Gratis",
+                content: `
+                    <p>Sebagai wujud nyata kasih Kristus bagi sesama, Komisi Diakonia GMI Ternate bekerja sama dengan Persekutuan Wanita (PWMI) dan Pemuda Remaja (P3MI) akan mengadakan kegiatan bakti sosial.</p>
+                    <p><strong>Rangkaian Kegiatan:</strong></p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Pemeriksaan tekanan darah, gula darah, dan konsultasi kesehatan dasar gratis bagi lansia dan warga sekitar.</li>
+                        <li>Pembagian paket diakonia kasih bagi keluarga prasejahtera dan jemaat yang membutuhkan.</li>
+                        <li>Kunjungan kasih ke panti asuhan di wilayah Kota Ternate.</li>
+                    </ul>
+                    <p>Jemaat yang tergerak mendukung dalam doa, tenaga medis, maupun donasi kasih dapat menghubungi Koordinator Diakonia atau melalui Sekretariat GMI Ternate.</p>
+                `
+            }
+        ];
+
+        const wartaModal = document.getElementById('warta-modal');
+
+        function openWartaModal(index) {
+            const item = wartaData[index];
+            document.getElementById('modal-badge').textContent = item.badge;
+            document.getElementById('modal-date').textContent = item.date;
+            document.getElementById('modal-title').textContent = item.title;
+            document.getElementById('modal-content').innerHTML = item.content;
+            wartaModal.classList.remove('hidden');
+            wartaModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeWartaModal() {
+            wartaModal.classList.add('hidden');
+            wartaModal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // Tutup modal jika klik area backdrop di luar kotak konten
+        wartaModal.addEventListener('click', (e) => {
+            if (e.target === wartaModal) {
+                closeWartaModal();
+            }
+        });
+
+        // 5. Salin Nomor Rekening Persembahan (Menggunakan execCommand agar kompatibel di iFrame)
+        function copyRekening() {
+            const rekeningText = document.getElementById('rekening-number').textContent.replace(/-/g, '');
+            const tempInput = document.createElement('textarea');
+            tempInput.value = rekeningText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                const feedback = document.getElementById('copy-feedback');
+                const btnText = document.getElementById('copy-btn-text');
+                feedback.classList.remove('hidden');
+                btnText.textContent = 'Tersalin!';
+                setTimeout(() => {
+                    feedback.classList.add('hidden');
+                    btnText.textContent = 'Salin Rekening';
+                }, 3500);
+            } catch (err) {
+                console.error('Gagal menyalin teks:', err);
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        // 6. Penanganan Formulir Permohonan Doa & Pesan
+        const prayerForm = document.getElementById('prayer-form');
+        const formFeedback = document.getElementById('form-feedback');
+        const formFeedbackText = document.getElementById('form-feedback-text');
+
+        prayerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nama = document.getElementById('nama').value.trim();
+            const kategori = document.getElementById('kategori').value;
+
+            formFeedbackText.textContent = `Syalom Saudara/i ${nama}, pesan Anda dalam kategori "${kategori}" telah diterima oleh Tim Pastoral GMI Ternate dan akan kami doakan bersama.`;
+            formFeedback.classList.remove('hidden');
+            prayerForm.reset();
+
+            setTimeout(() => {
+                formFeedback.classList.add('hidden');
+            }, 8000);
+        });
+    </script>
+</body>
+</html>
